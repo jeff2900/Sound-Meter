@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_page"
+    android:orientation="vertical"
+    tools:context="com.bodekjan.soundmeter.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <com.bodekjan.soundmeter.Speedometer
+            android:id="@+id/speed"
+            android:layout_centerInParent="true"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:background="@drawable/noise_disc"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/infobutton"
+            android:layout_gravity="right|top"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/question"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="16dp" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/refreshbutton"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/refresh"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="16dp" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="54dp"
+            android:id="@+id/eggbutton"
+            android:layout_gravity="left|bottom"
+			android:src="@drawable/egg"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+			android:visibility="gone"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <np.TextView
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_minlabel"
+                android:id="@+id/minlabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 Db"
+                android:textSize="36dp"
+                android:id="@+id/minval"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <np.TextView
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_avglabel"
+                android:id="@+id/avglabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 Db"
+                android:textSize="36dp"
+                android:id="@+id/mmval"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <np.TextView
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_maxlabel"
+                android:id="@+id/maxlabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 Db"
+                android:id="@+id/maxval"
+                android:textSize="36dp"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <np.TextView
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_curlabel"
+                android:id="@+id/curlabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 Db"
+                android:id="@+id/curval"
+                android:textSize="36dp"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/chartcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginBottom="20dp">
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp" />
+    </RelativeLayout>
+
+</LinearLayout>

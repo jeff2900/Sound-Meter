@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SoundMeter</string>
+	<!-- MainActivity.java -->
+	<string name="activity_infobull">Ceci est une boîte de message personnalisé</string>
+	<string name="activity_infotitle">A propos des Décibels</string>
+	<string name="activity_infobutton">Ok</string>
+	<string name="activity_recStartErr">Impossible de démarrer l\'enregistrement</string>
+	<string name="activity_recBusyErr">Recorder est occupé ou l\'autorisation d\'enregistrement est interdite</string>
+	<string name="activity_recFileErr">Impossible de créer le fichier</string>
+	<!-- activity_main.xml -->
+	<string name="activity_minlabel">Minimum</string>
+	<string name="activity_avglabel">Moyenne</string>
+	<string name="activity_maxlabel">Maximum</string>
+	<string name="activity_curlabel">Temps réel</string>
+	<!-- dialog_info.xml -->
+	<string name="info_0db">0dB : la plupart des gens entendent juste un faible bruit.</string>
+	<string name="info_30db">30dB～40dB c\'est le calme idéal.</string>
+	<string name="info_50db">50dB et plus : affecte le repos et le sommeil.</string>
+	<string name="info_70db">70dB et plus : peut affecter l\'apprentissage et le travail.</string>
+	<string name="info_90db">90dB et plus affectent audition.</string>
+	<string name="info_150db">150dB : une exposidtion soudaine à un environnement sonore de 150dB, va rompre les tympans. L\'audition sera complètement perdue</string>
+</resources>

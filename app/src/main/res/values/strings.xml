@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SoundMeter</string>
+	<!-- MainActivity.java -->
+	<string name="activity_infobull">This is a custom message box</string>
+	<string name="activity_infotitle">About Decibel</string>
+	<string name="activity_infobutton">Ok</string>
+	<string name="activity_recStartErr">Unable to start recording</string>
+	<string name="activity_recBusyErr">Recorder is busy or permission to record is prohibited</string>
+	<string name="activity_recFileErr">Can not create file</string>
+	<!-- activity_main.xml -->
+	<string name="activity_minlabel">Minimum</string>
+	<string name="activity_avglabel">Average</string>
+	<string name="activity_maxlabel">Maximum</string>
+	<string name="activity_curlabel">Real Time</string>
+	<!-- dialog_info.xml -->
+	<string name="info_0db">0dB : Most people just hear a low noise.</string>
+	<string name="info_30db">30dB～40dB it\'s the ideal calm.</string>
+	<string name="info_50db">50dB and more: affects rest and sleep.</string>
+	<string name="info_70db">70dB and more: can affect learning and work.</string>
+	<string name="info_90db">90dB and more affect audition.</string>
+	<string name="info_150db">150dB : A sudden exposure to a sound environment of 150dB, will break the eardrums. The audition will be completely lost.</string>
+</resources>

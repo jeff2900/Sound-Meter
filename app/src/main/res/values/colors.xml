@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="mygreen">#00ce44</color>
+    <color name="tab_down">#37aaa9</color>
+    <color name="tab">#46dad8</color>
+    <color name="inside_progress">#ff6c4d70</color>
+    <color name="inside_progress2">#35824e</color>
+    <color name="external_progress">#9C27B0</color>
+    <color name="external_progress2">#18eb5e</color>
+    <color name="bottom_velocimeter">#e515171d</color>
+    <color name="internal_velocimeter">#ffb4b4b4</color>
+    <color name="needle">#6200EA</color>
+    <color name="needle2">#18e9eb</color>
+    <color name="digital_number">#ffdcefff</color>
+    <color name="black">#323232</color>
+    <color name="fullblack">#111111</color>
+</resources>

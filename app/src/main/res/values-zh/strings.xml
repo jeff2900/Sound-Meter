@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">声音计</string>
+	<!-- MainActivity.java -->
+	<string name="activity_infobull">这个就是自定义的提示框</string>
+	<string name="activity_infotitle">关于分贝</string>
+	<string name="activity_infobutton">知道了</string>
+	<string name="activity_recStartErr">启动录音失败</string>
+	<string name="activity_recBusyErr">录音机已被占用或录音权限被禁止</string>
+	<string name="activity_recFileErr">创建文件失败</string>
+	<!-- activity_main.xml -->
+	<string name="activity_minlabel">最小</string>
+	<string name="activity_avglabel">平均</string>
+	<string name="activity_maxlabel">最大</string>
+	<string name="activity_curlabel">实时</string>
+	<!-- dialog_info.xml -->
+	<string name="info_0db">0dB是人刚能听到的最微弱的声音；</string>
+	<string name="info_30db">30dB～40dB是较为理想的安静环境；</string>
+	<string name="info_50db">超过50dB会影响休息和睡眠</string>
+	<string name="info_70db">超过70dB会影响学习和工作；</string>
+	<string name="info_90db">超过90dB会影响听力；</string>
+	<string name="info_150db">如果突然暴露在高达150db的噪声环境中，鼓膜会破裂出血，双耳完全失去听力</string>
+</resources>
