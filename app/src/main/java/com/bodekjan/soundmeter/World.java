@@ -23,5 +23,4 @@ public class World {
         if(dbCount<minDB) minDB=dbCount;
         if(dbCount>maxDB) maxDB=dbCount;
     }
-
 }

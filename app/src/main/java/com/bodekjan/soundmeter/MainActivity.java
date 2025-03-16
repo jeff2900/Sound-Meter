@@ -1,36 +1,30 @@
 package com.bodekjan.soundmeter;
 
+import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.FillFormatter;
+import com.github.mikephil.charting.formatter.IFillFormatter;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
@@ -105,6 +99,7 @@ public class MainActivity extends Activity {
             window.setStatusBarColor(Color.TRANSPARENT);
             window.setNavigationBarColor(Color.TRANSPARENT);
         }
+        boolean isAudioRecord = isRecordAudioPermissionGranted();
         setContentView(R.layout.activity_main);
         tf= Typeface.createFromAsset(this.getAssets(), "fonts/Let_s go Digital Regular.ttf");
         minVal=(TextView)findViewById(R.id.minval);minVal.setTypeface(tf);
@@ -176,7 +171,9 @@ public class MainActivity extends Activity {
             mChart = (LineChart) findViewById(R.id.chart1);
             mChart.setViewPortOffsets(50, 20, 5, 60);
             // no description text
-            mChart.setDescription("");
+            Description desc = new Description();
+            desc.setText("");
+            mChart.setDescription(desc);
             // enable touch gestures
             mChart.setTouchEnabled(true);
             // enable scaling and dragging
@@ -218,7 +215,7 @@ public class MainActivity extends Activity {
             set1.setFillColor(Color.GREEN);
             set1.setFillAlpha(100);
             set1.setDrawHorizontalHighlightIndicator(false);
-            set1.setFillFormatter(new FillFormatter() {
+            set1.setFillFormatter(new IFillFormatter() {
                 @Override
                 public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
                     return -10;
@@ -298,7 +295,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        File file = FileUtil.createFile("temp.amr");
+        File file = FileUtil.createFile(getApplicationContext(),"temp.amr");
         if (file != null) {
             startRecord(file);
         } else {
@@ -328,4 +325,30 @@ public class MainActivity extends Activity {
         mRecorder.delete();
         super.onDestroy();
     }
+
+    //Create placeholder for user's consent to record_audio permission.
+    private boolean isRecordAudioPermissionGranted()
+    {
+        int AUDIO_RECORD_REQUEST_CODE = 1;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) ==
+                    PackageManager.PERMISSION_GRANTED) {
+                // put your code for Version>=Marshmallow
+                return true;
+            } else {
+                if (shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)) {
+                    Toast.makeText(this,
+                            "App required access to audio", Toast.LENGTH_SHORT).show();
+                }
+                requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO
+                },AUDIO_RECORD_REQUEST_CODE);
+                return false;
+            }
+
+        } else {
+            // put your code for Version < Marshmallow
+            return true;
+        }
+    }
 }
+

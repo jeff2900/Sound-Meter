@@ -77,7 +77,6 @@ public class InfoDialog extends Dialog {
             return this;
         }
 
-
         public Builder setNegativeButton(int negativeButtonText,
                                          DialogInterface.OnClickListener listener) {
             this.negativeButtonText = (String) context

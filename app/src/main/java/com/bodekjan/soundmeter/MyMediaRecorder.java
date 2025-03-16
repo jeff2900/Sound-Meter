@@ -68,9 +68,6 @@ public class MyMediaRecorder {
         return false;
     }
 
-
-
-
     public void stopRecording() {
         if (mMediaRecorder != null){
             if(isRecording){
@@ -85,9 +82,6 @@ public class MyMediaRecorder {
             isRecording = false ;
         }
     }
-
-
-
 
     public void delete() {
         stopRecording();

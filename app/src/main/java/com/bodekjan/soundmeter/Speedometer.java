@@ -72,5 +72,4 @@ public class Speedometer extends ImageView {
     private float getAngle(float db){
         return(db-85)*5/3;  //Say more are tears, online to find pictures. The They will not change the map, the code calculation
     }
-
 }
