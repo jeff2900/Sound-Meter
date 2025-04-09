@@ -1,0 +1,1 @@
+Sound-meter is an android application that measures sound level in decibel

@@ -8,8 +8,8 @@ android {
         applicationId "com.bodekjan.soundmeter"
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 140
-        versionName "1.4.0"
+        versionCode 141
+        versionName "1.4.1"
     }
     lintOptions {
         abortOnError false
@@ -23,13 +23,18 @@ android {
     repositories {
         maven { url "https://jitpack.io" }
      }
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:22.0.0'
-//    compile 'com.github.glomadrian:velocimeterlibrary:1.0@aar'
+    implementation('androidx.appcompat:appcompat:1.5.1')
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.neopixl:PixlUI:v1.1.0'
 }

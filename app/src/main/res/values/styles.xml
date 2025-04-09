@@ -9,7 +9,6 @@
     </style>
     <style name="AppBaseTheme" parent="android:Theme.Light"></style>
 
-
     <style name="text_18_ffffff">
         <item name="typeface">ALKATIP.TTF</item>
         <item name="android:textSize">18.0dip</item>
